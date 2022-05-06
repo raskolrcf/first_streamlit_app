@@ -50,6 +50,6 @@ streamlit.header("The fruit load list contains")
 streamlit.dataframe(my_data_rows)
 
 # Add some fruit to the list
-add_my_fruit = streamlit.multiselect("Add a fruit:",['Avocado','Strawberries'])
-#fruits_to_show = my_fruit_list.loc[fruits_selected]
-
+add_my_fruit = streamlit.text_input('Add some fruit?','Kiwi')
+my_cur.execute("INSERT INTO pc_rivery_db.public.fruit_load_list (fruit_name) VALUES (add_my_fruit);")
+# streamlit.write('The user entered', fruit_choice)
