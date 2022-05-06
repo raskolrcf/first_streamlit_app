@@ -71,8 +71,3 @@ if streamlit.button('Add a Fruit to the List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     back_from_function = insert_row_snowflake(add_my_fruit)
     streamlit.txt(back_from_function)
-
-streamlit.write()
-
-#This will not work correctly, but just go with it for now
-my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('from streamlit')")
